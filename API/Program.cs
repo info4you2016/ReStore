@@ -1,4 +1,5 @@
 using API.Data;
+using API.Middleware;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,6 +29,7 @@ catch (System.Exception ex)
 {
     logger.LogError(ex, "Problem migrating date");
 } */
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -44,5 +46,7 @@ app.UseCors(opt =>
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseMyException();
 
 app.Run();
