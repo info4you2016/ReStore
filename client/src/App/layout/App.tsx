@@ -21,6 +21,7 @@ import Login from "../../features/account/Login";
 import Register from "../../features/account/Register";
 import { fetchCurrentUser } from "../../features/account/accountSlice";
 import PrivateRoute from "./PrivateRoute";
+import Orders from "../../features/orders/Orders";
 
 const App = () => {
 	const dispatch = useAppDispatch();
@@ -71,6 +72,7 @@ const App = () => {
 					<Route path="/server-error" element={<ServerError />} />
 					<Route path="/basket" element={<BasketPage />} />
 					<Route path="/checkout" element={<PrivateRoute><CheckOutPage /></PrivateRoute>} />
+					<Route path="/orders" element={<PrivateRoute><Orders /></PrivateRoute>} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/register" element={<Register />} />
 					<Route path="*" element={<NotFound />} />
