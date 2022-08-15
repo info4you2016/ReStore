@@ -62,7 +62,7 @@ const App = () => {
 			<ToastContainer position="bottom-right" hideProgressBar  theme="colored" />
 			<CssBaseline />
 			<Header darkMode={darkMode} handlethemeChange={handleThemeChange} />
-			<Container>
+			<Container sx={{mt: 4}}>
 				<Routes>
 					<Route path="/" element={<HomePage />} />
 					<Route path="/catalog" element={<Catalog />} />
